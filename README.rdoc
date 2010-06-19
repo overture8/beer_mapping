@@ -1,6 +1,46 @@
-= beer_mapping
+= Beer Mapping
 
-Description goes here.
+A ruby wrapper for the beermapping.com site.  So the ruby community can ejoy beer whenever, whereever.
+
+* {API Guidelines}[http://beermapping.com/api/]
+
+== Installation
+
+   gem install beer_mapping
+
+== Example
+
+   require 'rubygems'
+   require 'beer_mapping'
+
+   beer = BeerMapping::API.new("YOUR_API_KEY")
+   beer.find_by_location("chicago") # OR beer.find_by_name("Pub Name")
+   
+   beer.locations.each do |location|
+     # Standard data
+     puts location.name # Pub name
+     puts location.city
+     puts location.state
+
+     # Geo Data
+     puts location.geo.lng # Geo lontitude
+     puts location.geo.lat # Geo Latitude
+
+     # Rating Data
+     puts location.ratings.service
+     puts location.ratings.atmosphere
+     puts location.ratings.selection
+     puts location.ratings.overall
+
+     # Related Images
+     location.images.each do |image|
+       image.url
+       image.thumburl
+       image.caption
+       image.height
+       image.width
+     end
+   end
 
 == Note on Patches/Pull Requests
  
