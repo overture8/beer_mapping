@@ -1,6 +1,6 @@
 = Beer Mapping
 
-A ruby wrapper for the beermapping.com site.  So the ruby community can ejoy beer whenever, wherever.
+A ruby wrapper for beermapping.com.  So the ruby community can enjoy beer whenever, wherever.
 
 * {API Guidelines}[http://beermapping.com/api/]
 
